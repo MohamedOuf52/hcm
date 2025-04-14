@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class HcmLogin {
     @Test
 
-   public void testloginpage() {
+   public void testloginpage() throws InterruptedException {
         WebDriver driver;
         driver = new ChromeDriver();
         //maximize window
@@ -20,6 +22,13 @@ public class HcmLogin {
         String validusername = "1000036469";
         String validpassword = "E!j@d@2020";
         driver.findElement(By.id("loginForm:userNameId")).sendKeys("1000036469");
+
+        //wait until the password field is visible and interactable
+       // Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.findElement(By.id("loginForm:passwordId")).sendKeys("E!j@d@2020");
         driver.findElement(By.id("loginForm:loginBtnId")).click();
     }
