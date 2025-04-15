@@ -13,7 +13,9 @@ public class HcmLogin {
    public void testloginpage() throws InterruptedException {
         WebDriver driver;
         driver = new ChromeDriver();
-        //maximize window
+         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+         //maximize window
         driver.manage().window().maximize();
         driver.get("http://172.16.101.18:8032/HCM/Main/Login.jsf");
         By username= By.id("loginForm:userNameId");
@@ -25,11 +27,10 @@ public class HcmLogin {
 
         //wait until the password field is visible and interactable
        // Thread.sleep(2000);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.findElement(By.id("loginForm:passwordId")).sendKeys("E!j@d@2020");
+       driver.findElement(By.name("//span[2]//input[@name=\"loginForm:passwordId\"]")).sendKeys("E!j@d@2020");
         driver.findElement(By.id("loginForm:loginBtnId")).click();
     }
 }
