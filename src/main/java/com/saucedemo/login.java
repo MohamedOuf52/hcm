@@ -3,12 +3,12 @@ package com.saucedemo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Login {
+public class login {
     WebDriver driver ;
-    public Login(WebDriver driver) {
+    public login(WebDriver driver) {
         this.driver = driver;
     }
-    public void navigateToLoginPage() {
+    public void NavigateToLoginPage() {
         driver.get("https://www.saucedemo.com/v1/");
     }
     By username = By.id("user-name");
