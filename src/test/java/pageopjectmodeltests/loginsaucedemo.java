@@ -1,6 +1,6 @@
 package pageopjectmodeltests;
 
-import com.saucedemo.Login;
+import com.saucedemo.login;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,15 +9,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginSauceDemo {
+public class loginsaucedemo {
     WebDriver driver;
 
     @Test
     public void login() {
        //opject creation
-        Login login = new Login(driver);
+        login login = new login(driver);
         //navigate to login page
-        login.navigateToLoginPage();
+        login.NavigateToLoginPage();
 
         //login page
 
@@ -35,13 +35,13 @@ public class LoginSauceDemo {
     }
 
     @BeforeMethod
-    public void setUp() {
+    public void SetUp() {
         driver = new ChromeDriver();
         //maximize window
         driver.manage().window().maximize();
     }
     @AfterMethod
-    public void tearDown() {
+    public void TearDown() {
         driver.quit();
     }
 
