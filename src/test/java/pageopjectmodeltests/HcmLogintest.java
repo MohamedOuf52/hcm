@@ -39,10 +39,6 @@ public class HcmLogintest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(mainpage));
         driver.findElement(mainpage).isDisplayed();    }
 
-    @AfterMethod
-    public void TearDown() {
-        // Close the browser
-        driver.quit();
-    }
+
 }
 
